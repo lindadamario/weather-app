@@ -18,9 +18,7 @@ class WeatherApp extends Component {
             temp: '',
             minTemp: '',
             maxTemp: '',
-            mainDescription: '',
             description: '',
-            icon: '',
             err: '',
             tempUnit: 'celsius'
         }
@@ -48,9 +46,7 @@ class WeatherApp extends Component {
                     temp: Math.round(parsedJSON.main.temp),
                     minTemp: Math.round(parsedJSON.main.temp_min),
                     maxTemp: Math.round(parsedJSON.main.temp_max),
-                    mainDescription: parsedJSON.weather[0].main,
                     description: parsedJSON.weather[0].description,
-                    icon: parsedJSON.weather.icon,
                     err: ''
                 })
 
@@ -64,9 +60,7 @@ class WeatherApp extends Component {
                     temp: '',
                     minTemp: '',
                     maxTemp: '',
-                    mainDescription: '',
                     description: '',
-                    icon: '',
                 })
             })
     }
@@ -100,37 +94,29 @@ class WeatherApp extends Component {
             humidity,
             minTemp,
             maxTemp,
-            mainDescription,
             description,
-            icon,
             err,
             tempUnit
             } = this.state;
 
         return(
             <div className="weatherApp-container">
-                <div>
-                    <div className="weatherApp-subContainer">
-                        <div className="toggleDegrees">
-                            <div className="toggleDegreesSub">
-                                <button onClick={() => this.convertToCelsius(temp)}>*C</button>
-                                <button onClick={() => this.convertToFahrenheit(temp)}>*F</button>
-                            </div>
-                        </div>
-                        <WeatherSearchBar callData={this.fetchData} />
-                        {isLoading ? <h1>Loading...</h1> : null}
-                        {err ? <h3>{err}</h3> : null }
-                        {city ?
-                        <WeatherDetails
-                        temp= {temp}
-                        city= {city}
-                        humidity={humidity}
-                        minTemp={minTemp}
-                        maxTemp={maxTemp}
-                        mainDescription={mainDescription}
-                        description={description}
-                        icon={icon}  /> : ''}
+                <div className="weatherApp-subContainer">
+                    <div className="toggleDegrees">
+                        <button onClick={() => this.convertToCelsius(temp)}>*C</button>
+                        <button onClick={() => this.convertToFahrenheit(temp)}>*F</button>
                     </div>
+                    <WeatherSearchBar callData={this.fetchData} />
+                    {isLoading ? <h1>Loading...</h1> : null}
+                    {err ? <h3>{err}</h3> : null }
+                    {city ?
+                    <WeatherDetails
+                    temp= {temp}
+                    city= {city}
+                    humidity={humidity}
+                    minTemp={minTemp}
+                    maxTemp={maxTemp}
+                    description={description} /> : ''}
                 </div>
             </div>
         );

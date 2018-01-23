@@ -32,7 +32,7 @@ class WeatherSearchBar extends Component {
 
         const {term} = this.state;
         return (
-            <div>
+            <div className="searchBar-container">
                 <input
                     className="searchCity-input"
                     value={term}

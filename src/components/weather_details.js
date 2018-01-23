@@ -10,13 +10,18 @@ const WeatherDetails = (props) => {
     return(
         <div className="cityDetails">
             <h1>{props.city}</h1>
-            <img src={props.icon} alt="" />
             <h3>{props.temp}</h3>
-            <ul>
-                <li>{props.minTemp}</li>
-                <li>{props.maxTemp}</li>
+            <p>Current Temperature</p>
+            <ul className="maxMinTemp">
+                <li>
+                    <p id="minTemp-value">{props.minTemp}</p>
+                    <p id="minTemp-caption">Min</p>
+                </li>
+                <li>
+                    <p id="maxTemp-value">{props.maxTemp}</p>
+                    <p id="maxTemp-caption">Min</p>
+                </li>
             </ul>
-            <p>{props.mainDescription}</p>
             <p>{props.description}</p>
         </div>
     );
