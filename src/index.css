@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.weatherApp-container {
+  text-align: center;
+  padding: 2em;
+}
+
+.toggleDegrees {
+  padding: 10px;
+}
+.toggleDegrees button {
+  margin: 5px;
+}
+.searchCity-input {
+  height:20px;
+  width: 250px;
+}
+
+.searchCity-btn {
+  margin-left: 10px;
+}
