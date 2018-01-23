@@ -8,6 +8,7 @@ class WeatherSearchBar extends Component {
             term: ''
         }
         this.onSubmit=this.onSubmit.bind(this)
+        this.handleInputSearch = this.handleInputSearch.bind(this)
     }
 
     onInputChange(term) {
@@ -18,6 +19,15 @@ class WeatherSearchBar extends Component {
         this.props.callData(term);
     }
 
+    handleInputSearch(event){
+
+        const {term} = this.state
+
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            this.onSubmit(term);
+        }
+    }
     render() {
 
         const {term} = this.state;
@@ -25,9 +35,10 @@ class WeatherSearchBar extends Component {
             <div>
                 <input
                     className="searchCity-input"
-                    value={this.state.term}
+                    value={term}
                     placeholder="Insert city"
-                    onChange={event => this.onInputChange(event.target.value)}
+                    onKeyPress={this.handleInputSearch}
+                    onChange={(event) => this.onInputChange(event.target.value)}
                 />
                 <button onClick={() => {this.onSubmit(term)}} className="searchCity-btn">Search</button>
             </div>

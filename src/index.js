@@ -21,13 +21,16 @@ class WeatherApp extends Component {
             mainDescription: '',
             description: '',
             icon: '',
-            err: ''
+            err: '',
+            tempUnit: 'celsius'
         }
-        this.fetchData = this.fetchData.bind(this)
+        this.fetchData = this.fetchData.bind(this),
+        this.convertToFahrenheit = this.convertToFahrenheit.bind(this),
+        this.convertToCelsius = this.convertToCelsius.bind(this)
     }
 
     componentDidMount() {
-        //this.fetchData(this.state.city);
+        this.fetchData('Helsinki');
     }
 
 
@@ -42,12 +45,12 @@ class WeatherApp extends Component {
                     city: parsedJSON.name,
                     isLoading: false,
                     humidity: parsedJSON.humidity,
-                    temp: parsedJSON.main.temp,
-                    minTemp: parsedJSON.main.temp_min,
-                    maxTemp: parsedJSON.main.temp_max,
+                    temp: Math.round(parsedJSON.main.temp),
+                    minTemp: Math.round(parsedJSON.main.temp_min),
+                    maxTemp: Math.round(parsedJSON.main.temp_max),
                     mainDescription: parsedJSON.weather[0].main,
                     description: parsedJSON.weather[0].description,
-                    icon: parsedJSON.main.icon,
+                    icon: parsedJSON.weather.icon,
                     err: ''
                 })
 
@@ -56,12 +59,37 @@ class WeatherApp extends Component {
                 console.log(error);
                 this.setState({
                     isLoading: false,
-                    err: 'City not found'
+                    err: 'City not found',
+                    city: '',
+                    temp: '',
+                    minTemp: '',
+                    maxTemp: '',
+                    mainDescription: '',
+                    description: '',
+                    icon: '',
                 })
             })
     }
 
-    
+    convertToFahrenheit(value) {
+        if(this.state.tempUnit === 'celsius') {
+            const fahrenheit = (value * 9 / 5) + 32;
+            this.setState({
+                tempUnit: 'toFahrenheit',
+                temp: fahrenheit
+            })
+        }
+    }
+
+    convertToCelsius(value) {
+        if(this.state.tempUnit === 'toFahrenheit') {
+            const celsius = (5/9) * (value - 32);
+            this.setState({
+                tempUnit: 'celsius',
+                temp: celsius
+            })
+        }
+    }
 
     render() {
 
@@ -75,28 +103,35 @@ class WeatherApp extends Component {
             mainDescription,
             description,
             icon,
-            err
+            err,
+            tempUnit
             } = this.state;
 
         return(
             <div className="weatherApp-container">
-                {isLoading ? <h1>Loading...</h1> : null}
-                {err ? <h3>{err}</h3> : null}
-                    <div className="toggleDegrees">
-                        <button>*C</button>
-                        <button>*F</button>
+                <div>
+                    <div className="weatherApp-subContainer">
+                        <div className="toggleDegrees">
+                            <div className="toggleDegreesSub">
+                                <button onClick={() => this.convertToCelsius(temp)}>*C</button>
+                                <button onClick={() => this.convertToFahrenheit(temp)}>*F</button>
+                            </div>
+                        </div>
+                        <WeatherSearchBar callData={this.fetchData} />
+                        {isLoading ? <h1>Loading...</h1> : null}
+                        {err ? <h3>{err}</h3> : null }
+                        {city ?
+                        <WeatherDetails
+                        temp= {temp}
+                        city= {city}
+                        humidity={humidity}
+                        minTemp={minTemp}
+                        maxTemp={maxTemp}
+                        mainDescription={mainDescription}
+                        description={description}
+                        icon={icon}  /> : ''}
                     </div>
-
-                <WeatherSearchBar callData={this.fetchData} />
-                <WeatherDetails
-                    temperature= {temp}
-                    city= {city}
-                    humidity={humidity}
-                    minTemp={minTemp}
-                    maxTemp={maxTemp}
-                    mainDescription={mainDescription}
-                    description={description}
-                    icon={icon} />
+                </div>
             </div>
         );
     }

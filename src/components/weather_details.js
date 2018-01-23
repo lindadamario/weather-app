@@ -9,9 +9,9 @@ const WeatherDetails = (props) => {
 
     return(
         <div className="cityDetails">
-            <h1>{props.name}</h1>
+            <h1>{props.city}</h1>
             <img src={props.icon} alt="" />
-            <h3>{props.temperature}</h3>
+            <h3>{props.temp}</h3>
             <ul>
                 <li>{props.minTemp}</li>
                 <li>{props.maxTemp}</li>
