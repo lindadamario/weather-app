@@ -59,7 +59,7 @@ class WeatherApp extends Component {
                     temp: '',
                     minTemp: '',
                     maxTemp: '',
-                    description: '',
+                    description: ''
                 })
             })
     }
@@ -69,7 +69,7 @@ class WeatherApp extends Component {
             const fahrenheit = (value * 9 / 5) + 32;
             this.setState({
                 tempUnit: 'toFahrenheit',
-                temp: fahrenheit
+                temp: Math.round(fahrenheit)
             })
         }
     }
@@ -79,7 +79,7 @@ class WeatherApp extends Component {
             const celsius = (5/9) * (value - 32);
             this.setState({
                 tempUnit: 'celsius',
-                temp: celsius
+                temp: Math.round(celsius)
             })
         }
     }
