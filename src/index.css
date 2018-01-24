@@ -55,9 +55,13 @@ body {
   width: 72px;
   border-radius: 7px;
   font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 3px 3px 0;
+  border: 1px solid darkgrey;
+  background-color: rgb(161, 217, 235);
 }
 .searchCity-btn:hover {
-  background-color: rgb(255, 156, 109);
+  background-color: whitesmoke;
 }
 
 /* city deatils */
