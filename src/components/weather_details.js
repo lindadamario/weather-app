@@ -3,9 +3,6 @@ import React, { Component } from 'react';
 
 
 const WeatherDetails = (props) => {
-// I define a variable that has one argument: city
-// and i replace the content inside the tags with the content in the api
-
 
     return(
         <div className="cityDetails">
