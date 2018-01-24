@@ -102,8 +102,8 @@ class WeatherApp extends Component {
             <div className="weatherApp-container">
                 <div className="weatherApp-subContainer">
                     <div className="toggleDegrees">
-                        <button onClick={() => this.convertToCelsius(temp)}>*C</button>
-                        <button onClick={() => this.convertToFahrenheit(temp)}>*F</button>
+                        <button onClick={() => this.convertToCelsius(temp)}>°C</button>
+                        <button onClick={() => this.convertToFahrenheit(temp)}>°F</button>
                     </div>
                     <WeatherSearchBar callData={this.fetchData} />
                     {isLoading ? <h1>Loading...</h1> : null}
