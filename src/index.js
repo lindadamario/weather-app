@@ -33,9 +33,8 @@ class WeatherApp extends Component {
 
 
     fetchData(city) {
-        console.log(city);
         this.setState({isLoading: true})
-        fetch(`https:api.openweathermap.org/data/2.5/weather?q=${city}&appid=1023390133ff9da7ade5a993d987373a&units=metric`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=1023390133ff9da7ade5a993d987373a&units=metric`)
             .then(response => response.json())
             .then(parsedJSON => {
                 console.log(parsedJSON)
