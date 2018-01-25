@@ -6,7 +6,7 @@ body {
   margin: 0 auto;
   padding: 0;
   font-family: sans-serif;
-  background-image: url(../public/background.jpg);
+  background-image: url(background.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   color: #000000;
@@ -28,7 +28,7 @@ body {
   display: inline-flex;
 }
 .searchCity-input {
-background-color: rgba(189, 174, 187, 0.6);
+  background-color: rgba(189, 174, 187, 0.6);
 }
 .temperatures {
   display: block;
