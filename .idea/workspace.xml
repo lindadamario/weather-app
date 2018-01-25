@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f5706602-ed26-48a2-968f-2cbd18067f4c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -247,7 +246,7 @@
       <workItem from="1516865811968" duration="205000" />
       <workItem from="1516869725722" duration="30000" />
       <workItem from="1516878081000" duration="4304000" />
-      <workItem from="1516905674301" duration="11900000" />
+      <workItem from="1516905674301" duration="11915000" />
     </task>
     <task id="LOCAL-00001" summary="- add celsius/fahrenheit&#10;- add onInputChange&#10;- edit error handler">
       <created>1516730212657</created>
@@ -319,11 +318,18 @@
       <option name="project" value="LOCAL" />
       <updated>1516921640617</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="- fix degrees decimals">
+      <created>1516921785754</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1516921785754</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98241000" />
+    <option name="totallyTimeSpent" value="98256000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="259" y="23" width="1159" height="877" extended-state="0" />
