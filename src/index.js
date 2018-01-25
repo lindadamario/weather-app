@@ -5,7 +5,7 @@ import fetch from 'isomorphic-fetch';
 import WeatherSearchBar from './components/weather_searchBar';
 import WeatherDetails from './components/weather_details';
 import registerServiceWorker from './registerServiceWorker';
-
+import 'background.jpg'
 
 class WeatherApp extends Component {
 
