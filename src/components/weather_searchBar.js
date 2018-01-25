@@ -36,7 +36,7 @@ class WeatherSearchBar extends Component {
                 <input
                     className="searchCity-input"
                     value={term}
-                    placeholder="Insert city"
+                    placeholder=" Insert City"
                     onKeyPress={this.handleInputSearch}
                     onChange={(event) => this.onInputChange(event.target.value)}
                 />

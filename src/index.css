@@ -1,27 +1,56 @@
 * {
-  font-family: Monospaced;
+  font-family: Pictography;
 }
+
 body {
   margin: 0 auto;
   padding: 0;
   font-family: sans-serif;
-  background-color: rgb(196, 226, 255);
-  color: rgb(76, 76, 76);
+  background-image: url(background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #000000;
 }
 
 /* weather-app container */
 .weatherApp-container {
   text-align: center;
-  padding: 2em;
+  padding: 1em;
+}
+.temperatures {
+  display: inline-flex;
+}
+.cityDetails {
+  display: flex;
+  margin: 0 auto;
+}
+.max_min_temp {
+  display: inline-flex;
+}
+.searchCity-input {
+background-color: rgba(189, 174, 187, 0.6);
+}
+.temperatures {
+  display: block;
+  margin: auto;
 }
 .weatherApp-subContainer {
-  width: 20em;
   margin: 0 auto;
-  background-color: rgb(161, 217, 235);
-  padding: 5em 10em 5em 10em;
+  background-color: rgba(161, 217, 235, 0.2);
+  padding: 1em 3em 2em 3em;
+  max-width: 50em;
   border-radius: 5px;
-  border: 4px solid #4c4c4c;
-  box-shadow: 0 4px 15px 0;
+  border: 2px solid rgba(245, 245, 245, 0.2);
+  box-shadow: 0 4px 15px rgba(245, 245, 245, 0.2);
+
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+.temperatures {
+
 }
 .toggleDegrees {
   padding: 10px;
@@ -30,35 +59,34 @@ body {
   margin: 5px;
   height: 35px;
   width: 48px;
-  border-radius: 13px;
+  border-radius: 2px;
   font-size: 20px;
-  background-color: rgb(161, 217, 235);
-  box-shadow: 0 3px 3px 0;
+  background-color:  rgba(189, 174, 187, 0.6);
+  box-shadow: 0 3px 3px white;
 }
 .toggleDegrees button:hover {
-  background-color: whitesmoke;
+  background-color: rgba(245, 245, 245, 0.7);
   color: rgb(76, 76, 76);
-  border: 1px solid whitesmoke;
 }
 .searchBar-container {
-  display: inline-flex;
+  padding: 1em;
 }
 .searchCity-input {
   height: 30px;
-  width: 250px;
-  border-radius: 8px;
+  width: 450px;
+  border-radius: 4px;
   font-size: 14px;
 }
 .searchCity-btn {
-  margin-left: 5px;
+  margin:0;
+  margin-left: 10px;
   height: 34px;
-  width: 72px;
-  border-radius: 7px;
+  width: 100px;
   font-size: 13px;
   font-weight: 600;
   box-shadow: 0 3px 3px 0;
   border: 1px solid darkgrey;
-  background-color: rgb(161, 217, 235);
+  background-color: rgba(161, 217, 235, 0.2);
 }
 .searchCity-btn:hover {
   background-color: whitesmoke;
@@ -68,19 +96,17 @@ body {
 .cityDetails h3 {
   margin: 0 auto;
   border-radius: 100%;
-  border: 2px solid #4c4c4c;
-  background-color: rgb(245, 245, 245);
+  border: 2px solid rgba(132, 131, 129, 0.2);
+  background-color: rgba(245, 245, 245, 0.2);
   width: 3em;
   height: 3em;
   line-height: 180px;
   font-size: 60px;
-  box-shadow: 0 5px 7px 0;
+  box-shadow: 0 12px 19px 0;
+  text-shadow: 2px 2px rgba(114, 113, 111, 0.5);
 }
 .cityDetails span {
   font-size: 20px;
-}
-.cityDetails {
-  margin-top: 40px;
 }
 .cityDetails h1 {
   font-size: 50px;
@@ -97,6 +123,12 @@ body {
   flex-direction: column;
   font-size: 30px;
 }
+.temperatures p {
+  font-size: 24px;
+  font-weight: bold;
+
+  text-transform: capitalize;
+}
 #minTemp-caption, #maxTemp-caption {
   font-size: 18px;
   font-weight: 600;
@@ -106,8 +138,10 @@ body {
   padding: 10px;
   font-size: 34px;
   font-weight: 600;
-  background-color: rgb(245, 245, 245);
-  border: 2px solid #4c4c4c;
+  background-color: rgba(245, 245, 245, 0.3);
+  border-bottom: 2px solid rgba(132, 131, 129, 0.2);
+  border-right: 2px solid rgba(132, 131, 129, 0.2);
+  text-shadow: 2px 2px rgba(114, 113, 111, 0.5);
   width: 40px;
   border-radius: 100px;
   box-shadow: 0 5px 7px 0;
@@ -116,7 +150,7 @@ body {
   font-size: 20px;
   font-weight: 700;
 }
-.cityDetails p:nth-child(5) {
+.cityDetails p:nth-child(2) {
   font-size: 24px;
   font-style: italic;
 }
@@ -127,10 +161,31 @@ body {
     width: auto;
     padding: 0;
   }
-  .searchCity-input, .searchCity-btn {
-    width: auto;
+  .searchCity-btn {
+    width: 100px;
+    margin:10px 0 0 10px;
+  }
+  .searchCity-input {
+    width: 300px;
   }
   .toggleDegrees {
     display: inline-flex;
   }
 }
+@media all and (max-width: 550px) {
+  .cityDetails {
+    flex-direction: column;
+  }
+}
+
+@media all and (max-width: 370px) {
+  .searchCity-input {
+    width: 160px;
+  }
+}
+
+
+
+
+
+

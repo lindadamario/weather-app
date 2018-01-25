@@ -22,8 +22,8 @@ class WeatherApp extends Component {
             err: '',
             tempUnit: 'celsius'
         }
-        this.fetchData = this.fetchData.bind(this),
-        this.convertToFahrenheit = this.convertToFahrenheit.bind(this),
+        this.fetchData = this.fetchData.bind(this)
+        this.convertToFahrenheit = this.convertToFahrenheit.bind(this)
         this.convertToCelsius = this.convertToCelsius.bind(this)
     }
 
@@ -59,7 +59,7 @@ class WeatherApp extends Component {
                     temp: '',
                     minTemp: '',
                     maxTemp: '',
-                    description: ''
+                    description: '',
                 })
             })
     }
@@ -95,29 +95,32 @@ class WeatherApp extends Component {
             maxTemp,
             description,
             err,
-            tempUnit
+            tempUnit,
             } = this.state;
 
         return(
             <div className="weatherApp-container">
-                <div className="weatherApp-subContainer">
-                    <div className="toggleDegrees">
-                        <button onClick={() => this.convertToCelsius(temp)}>°C</button>
-                        <button onClick={() => this.convertToFahrenheit(temp)}>°F</button>
-                    </div>
-                    <WeatherSearchBar callData={this.fetchData} />
-                    {isLoading ? <h1>Loading...</h1> : null}
-                    {err ? <h3>{err}</h3> : null }
-                    {city ?
+                <WeatherSearchBar callData={this.fetchData} />
+                {isLoading ? <h1>Loading...</h1> : null}
+                {err ? <h3>{err}</h3> : null }
+                {city ?
+                    <div className="weatherApp-subContainer">
+                        <div className="toggleDegrees">
+                            <button onClick={() => this.convertToCelsius(temp)}>°C</button>
+                            <button onClick={() => this.convertToFahrenheit(temp)}>°F</button>
+                        </div>
+                    <div>
                     <WeatherDetails
                     temp= {temp}
                     city= {city}
                     humidity={humidity}
                     minTemp={minTemp}
                     maxTemp={maxTemp}
-                    description={description} /> : ''}
-                </div>
+                    description={description} />
+                    </div>
+                </div> : ''}
             </div>
+
         );
     }
 }
