@@ -246,7 +246,7 @@
       <workItem from="1516865811968" duration="205000" />
       <workItem from="1516869725722" duration="30000" />
       <workItem from="1516878081000" duration="4304000" />
-      <workItem from="1516905674301" duration="11915000" />
+      <workItem from="1516905674301" duration="11958000" />
     </task>
     <task id="LOCAL-00001" summary="- add celsius/fahrenheit&#10;- add onInputChange&#10;- edit error handler">
       <created>1516730212657</created>
@@ -325,11 +325,18 @@
       <option name="project" value="LOCAL" />
       <updated>1516921785754</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="new UI">
+      <created>1516921834328</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1516921834328</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98256000" />
+    <option name="totallyTimeSpent" value="98299000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="259" y="23" width="1159" height="877" extended-state="0" />
@@ -367,7 +374,8 @@
     <MESSAGE value="- fix celsius/fahrenehit sign&#10;- css" />
     <MESSAGE value="- css" />
     <MESSAGE value="- fix degrees decimals" />
-    <option name="LAST_COMMIT_MESSAGE" value="- fix degrees decimals" />
+    <MESSAGE value="new UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="new UI" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
