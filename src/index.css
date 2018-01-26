@@ -6,9 +6,6 @@ body {
   margin: 0 auto;
   padding: 0;
   font-family: sans-serif;
-  background-image: url(background.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
   color: #000000;
 }
 
@@ -16,6 +13,10 @@ body {
 .weatherApp-container {
   text-align: center;
   padding: 1em;
+  background-image: url(background.jpg);
+  background-size: cover;
+  height:100em;
+  background-repeat: no-repeat;
 }
 .temperatures {
   display: inline-flex;
@@ -157,6 +158,9 @@ body {
 
 /* media queries */
 @media all and (max-width: 780px) {
+  .weatherApp-container {
+    height:50em;
+  }
   .weatherApp-subContainer {
     width: auto;
     padding: 0;
@@ -173,6 +177,9 @@ body {
   }
 }
 @media all and (max-width: 550px) {
+  .weatherApp-container {
+    height:auto;
+  }
   .cityDetails {
     flex-direction: column;
   }
