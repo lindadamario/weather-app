@@ -17,11 +17,11 @@ const WeatherDetails = (props) => {
                 <ul className="maxMinTemp">
                     <li>
                         <p id="minTemp-value">{props.minTemp}°</p>
-                        <p id="minTemp-caption">Min</p>
+                        <p id="minTemp-caption">Min Temp</p>
                     </li>
                     <li>
                         <p id="maxTemp-value">{props.maxTemp}°</p>
-                        <p id="maxTemp-caption">Min</p>
+                        <p id="maxTemp-caption">Max Temp</p>
                     </li>
                 </ul>
                 </div>

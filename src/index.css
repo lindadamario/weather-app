@@ -1,14 +1,12 @@
 * {
   font-family: Pictography;
 }
-
 body {
   margin: 0 auto;
   padding: 0;
   font-family: sans-serif;
   color: #000000;
 }
-
 /* weather-app container */
 .weatherApp-container {
   text-align: center;
@@ -18,9 +16,6 @@ body {
   height:100em;
   background-repeat: no-repeat;
 }
-.temperatures {
-  display: inline-flex;
-}
 .cityDetails {
   display: flex;
   margin: 0 auto;
@@ -28,10 +23,8 @@ body {
 .max_min_temp {
   display: inline-flex;
 }
-.searchCity-input {
-  background-color: rgba(189, 174, 187, 0.6);
-}
 .temperatures {
+  display: inline-flex;
   display: block;
   margin: auto;
 }
@@ -43,15 +36,11 @@ body {
   border-radius: 5px;
   border: 2px solid rgba(245, 245, 245, 0.2);
   box-shadow: 0 4px 15px rgba(245, 245, 245, 0.2);
-
 }
 .details {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-}
-.temperatures {
-
 }
 .toggleDegrees {
   padding: 10px;
@@ -77,22 +66,28 @@ body {
   width: 450px;
   border-radius: 4px;
   font-size: 14px;
+  background-color: rgba(189, 174, 187, 0.6);
+  box-shadow: 0 3px 3px rgba(245, 245, 245, 0.2);
+  border: 1px solid darkgrey;
 }
 .searchCity-btn {
   margin:0;
   margin-left: 10px;
   height: 34px;
   width: 100px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
-  box-shadow: 0 3px 3px 0;
+  box-shadow: 0 3px 3px rgba(245, 245, 245, 0.2);
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
   border: 1px solid darkgrey;
   background-color: rgba(161, 217, 235, 0.2);
 }
 .searchCity-btn:hover {
-  background-color: whitesmoke;
+  background-color: rgba(245, 245, 245, 0.7);
+  color: rgb(76, 76, 76);
 }
-
 /* city deatils */
 .cityDetails h3 {
   margin: 0 auto;
@@ -105,9 +100,6 @@ body {
   font-size: 60px;
   box-shadow: 0 12px 19px 0;
   text-shadow: 2px 2px rgba(114, 113, 111, 0.5);
-}
-.cityDetails span {
-  font-size: 20px;
 }
 .cityDetails h1 {
   font-size: 50px;
@@ -127,7 +119,6 @@ body {
 .temperatures p {
   font-size: 24px;
   font-weight: bold;
-
   text-transform: capitalize;
 }
 #minTemp-caption, #maxTemp-caption {
@@ -148,12 +139,9 @@ body {
   box-shadow: 0 5px 7px 0;
 }
 .cityDetails p:nth-child(3) {
-  font-size: 20px;
-  font-weight: 700;
-}
-.cityDetails p:nth-child(2) {
   font-size: 24px;
-  font-style: italic;
+  font-weight: bold;
+  font-weight: 700;
 }
 
 /* media queries */
@@ -178,13 +166,12 @@ body {
 }
 @media all and (max-width: 550px) {
   .weatherApp-container {
-    height:auto;
+    height:58em;
   }
   .cityDetails {
     flex-direction: column;
   }
 }
-
 @media all and (max-width: 370px) {
   .searchCity-input {
     width: 160px;
