@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import 'background.jpg';
 import fetch from 'isomorphic-fetch';
 import WeatherSearchBar from './components/weather_searchBar';
 import WeatherDetails from './components/weather_details';
