@@ -17,8 +17,8 @@
       <file leaf-file-name="index.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="159" column="32" lean-forward="true" selection-start-line="159" selection-start-column="32" selection-end-line="159" selection-end-column="32" />
+            <state relative-caret-position="129">
+              <caret line="156" column="1" lean-forward="true" selection-start-line="156" selection-start-column="1" selection-end-line="156" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -261,7 +261,7 @@
       <workItem from="1516865811968" duration="205000" />
       <workItem from="1516869725722" duration="30000" />
       <workItem from="1516878081000" duration="4304000" />
-      <workItem from="1516905674301" duration="15359000" />
+      <workItem from="1516905674301" duration="15604000" />
     </task>
     <task id="LOCAL-00001" summary="- add celsius/fahrenheit&#10;- add onInputChange&#10;- edit error handler">
       <created>1516730212657</created>
@@ -382,11 +382,18 @@
       <option name="project" value="LOCAL" />
       <updated>1516951032331</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="new UI - fix background image">
+      <created>1516951737748</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1516951737748</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101700000" />
+    <option name="totallyTimeSpent" value="101945000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="259" y="23" width="1159" height="877" extended-state="0" />
@@ -429,7 +436,8 @@
     <MESSAGE value="new UI/3" />
     <MESSAGE value="new UI/4" />
     <MESSAGE value="new UI/5" />
-    <option name="LAST_COMMIT_MESSAGE" value="new UI/5" />
+    <MESSAGE value="new UI - fix background image" />
+    <option name="LAST_COMMIT_MESSAGE" value="new UI - fix background image" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -899,8 +907,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="159" column="32" lean-forward="true" selection-start-line="159" selection-start-column="32" selection-end-line="159" selection-end-column="32" />
+        <state relative-caret-position="129">
+          <caret line="156" column="1" lean-forward="true" selection-start-line="156" selection-start-column="1" selection-end-line="156" selection-end-column="1" />
           <folding />
         </state>
       </provider>

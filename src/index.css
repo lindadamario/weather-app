@@ -159,7 +159,7 @@ body {
 /* media queries */
 @media all and (max-width: 780px) {
   .weatherApp-container {
-    height:50em;
+    height:70em;
   }
   .weatherApp-subContainer {
     width: auto;
