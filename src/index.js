@@ -57,22 +57,26 @@ class WeatherApp extends Component {
     convertToFahrenheit(value) {
         if(this.state.tempUnit === 'celsius') {
             const fahrenheit = (value * 9 / 5) + 32;
+            const currentMinTemp = (this.state.minTemp * 9 / 5) + 32
+            const currentMaxTemp = (this.state.maxTemp * 9 / 5) + 32
             this.setState({
                 tempUnit: 'toFahrenheit',
                 temp: Math.round(fahrenheit),
-                minTemp: Math.round(fahrenheit),
-                maxTemp: Math.round(fahrenheit)
+                minTemp: Math.round(currentMinTemp),
+                maxTemp: Math.round(currentMaxTemp)
             })
         }
     }
     convertToCelsius(value) {
         if(this.state.tempUnit === 'toFahrenheit') {
             const celsius = (5/9) * (value - 32);
+            const currentMinTemp = (5/9) * (this.state.minTemp - 32)
+            const currentMaxTemp = (5/9) * (this.state.maxTemp - 32)
             this.setState({
                 tempUnit: 'celsius',
                 temp: Math.round(celsius),
-                minTemp: Math.round(celsius),
-                maxTemp: Math.round(celsius)
+                minTemp: Math.round(currentMinTemp),
+                maxTemp: Math.round(currentMaxTemp)
             })
         }
     }
@@ -98,8 +102,8 @@ class WeatherApp extends Component {
                 {city ?
                     <div className="weatherApp-subContainer">
                         <div className="toggleDegrees">
-                            <button onClick={() => this.convertToCelsius(temp, minTemp, maxTemp)}>°C</button>
-                            <button onClick={() => this.convertToFahrenheit(temp, minTemp, maxTemp)}>°F</button>
+                            <button onClick={() => this.convertToCelsius(temp)}>°C</button>
+                            <button onClick={() => this.convertToFahrenheit(temp)}>°F</button>
                         </div>
                     <div>
                     <WeatherDetails
