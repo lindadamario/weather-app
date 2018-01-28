@@ -10,26 +10,20 @@ class WeatherSearchBar extends Component {
         this.onSubmit=this.onSubmit.bind(this)
         this.handleInputSearch = this.handleInputSearch.bind(this)
     }
-
     onInputChange(term) {
         this.setState({term});
     }
-
     onSubmit(term) {
         this.props.callData(term);
     }
-
     handleInputSearch(event){
-
         const {term} = this.state
-
         if (event.key === 'Enter') {
             event.preventDefault();
             this.onSubmit(term);
         }
     }
     render() {
-
         const {term} = this.state;
         return (
             <div className="searchBar-container">

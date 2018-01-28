@@ -2,13 +2,11 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import fetch from 'isomorphic-fetch';
-import WeatherSearchBar from './components/weather_searchBar';
-import WeatherDetails from './components/weather_details';
-import registerServiceWorker from './registerServiceWorker';
+import WeatherSearchBar from './components/WeatherSearchBar';
+import WeatherDetails from './components/WeatherDetails';
 
 
 class WeatherApp extends Component {
-
     constructor(props) {
         super(props)
         this.state = {
@@ -22,70 +20,64 @@ class WeatherApp extends Component {
             err: '',
             tempUnit: 'celsius'
         }
-        this.fetchData = this.fetchData.bind(this)
-        this.convertToFahrenheit = this.convertToFahrenheit.bind(this)
-        this.convertToCelsius = this.convertToCelsius.bind(this)
     }
-
     componentDidMount() {
         this.fetchData('Helsinki');
     }
-
-
     fetchData(city) {
         this.setState({isLoading: true})
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=1023390133ff9da7ade5a993d987373a&units=metric`)
-            .then(response => response.json())
-            .then(parsedJSON => {
-                console.log(parsedJSON)
-                this.setState({
-                    city: parsedJSON.name,
-                    isLoading: false,
-                    humidity: parsedJSON.humidity,
-                    temp: Math.round(parsedJSON.main.temp),
-                    minTemp: Math.round(parsedJSON.main.temp_min),
-                    maxTemp: Math.round(parsedJSON.main.temp_max),
-                    description: parsedJSON.weather[0].description,
-                    err: ''
-                })
-
+        .then(response => response.json())
+        .then(parsedJSON => {
+            console.log(parsedJSON)
+            this.setState({
+                city: parsedJSON.name,
+                isLoading: false,
+                humidity: parsedJSON.humidity,
+                temp: Math.round(parsedJSON.main.temp),
+                minTemp: Math.round(parsedJSON.main.temp_min),
+                maxTemp: Math.round(parsedJSON.main.temp_max),
+                description: parsedJSON.weather[0].description,
+                err: ''
             })
-            .catch(error => {
-                console.log(error);
-                this.setState({
-                    isLoading: false,
-                    err: 'City not found',
-                    city: '',
-                    temp: '',
-                    minTemp: '',
-                    maxTemp: '',
-                    description: '',
-                })
+        })
+        .catch(error => {
+            console.log(error);
+            this.setState({
+                isLoading: false,
+                err: 'City not found',
+                city: '',
+                temp: '',
+                minTemp: '',
+                maxTemp: '',
+                description: ''
             })
+        })
     }
-
     convertToFahrenheit(value) {
         if(this.state.tempUnit === 'celsius') {
             const fahrenheit = (value * 9 / 5) + 32;
             this.setState({
                 tempUnit: 'toFahrenheit',
-                temp: Math.round(fahrenheit)
+                temp: Math.round(fahrenheit),
+                minTemp: Math.round(fahrenheit),
+                maxTemp: Math.round(fahrenheit)
             })
         }
     }
-
     convertToCelsius(value) {
         if(this.state.tempUnit === 'toFahrenheit') {
             const celsius = (5/9) * (value - 32);
             this.setState({
                 tempUnit: 'celsius',
-                temp: Math.round(celsius)
+                temp: Math.round(celsius),
+                minTemp: Math.round(celsius),
+                maxTemp: Math.round(celsius)
             })
         }
     }
 
     render() {
-
         const {
             isLoading,
             city,
@@ -100,14 +92,14 @@ class WeatherApp extends Component {
 
         return(
             <div className="weatherApp-container">
-                <WeatherSearchBar callData={this.fetchData} />
+                <WeatherSearchBar callData={city => this.fetchData(city)} />
                 {isLoading ? <h1>Loading...</h1> : null}
                 {err ? <h3>{err}</h3> : null }
                 {city ?
                     <div className="weatherApp-subContainer">
                         <div className="toggleDegrees">
-                            <button onClick={() => this.convertToCelsius(temp)}>°C</button>
-                            <button onClick={() => this.convertToFahrenheit(temp)}>°F</button>
+                            <button onClick={() => this.convertToCelsius(temp, minTemp, maxTemp)}>°C</button>
+                            <button onClick={() => this.convertToFahrenheit(temp, minTemp, maxTemp)}>°F</button>
                         </div>
                     <div>
                     <WeatherDetails
@@ -120,11 +112,8 @@ class WeatherApp extends Component {
                     </div>
                 </div> : ''}
             </div>
-
         );
     }
 }
 
-
 ReactDOM.render(<WeatherApp />, document.getElementById('root'));
-registerServiceWorker();

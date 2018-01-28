@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 
 
-
-
 const WeatherDetails = (props) => {
-
     return(
         <div className="cityDetails">
             <div className="details">
@@ -30,7 +27,5 @@ const WeatherDetails = (props) => {
         </div>
     );
 }
-
-
 
 export default WeatherDetails;
