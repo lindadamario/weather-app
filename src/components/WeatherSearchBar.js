@@ -7,8 +7,6 @@ class WeatherSearchBar extends Component {
         this.state = {
             term: ''
         }
-        this.onSubmit=this.onSubmit.bind(this)
-        this.handleInputSearch = this.handleInputSearch.bind(this)
     }
     onInputChange(term) {
         this.setState({term});
@@ -31,7 +29,7 @@ class WeatherSearchBar extends Component {
                     className="searchCity-input"
                     value={term}
                     placeholder=" Insert City"
-                    onKeyPress={this.handleInputSearch}
+                    onKeyPress={(term) => this.handleInputSearch(term)}
                     onChange={(event) => this.onInputChange(event.target.value)}
                 />
                 <button onClick={() => {this.onSubmit(term)}} className="searchCity-btn">Search</button>
